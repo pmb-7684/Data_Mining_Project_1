@@ -14000,7 +14000,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"></span>
 <span class="c1"># Setup our workspace</span>
 
 <span class="c1"># Render our plots inline</span>
@@ -14791,7 +14791,7 @@ memory usage: 152.4+ MB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"></span>
 <span class="n">CLT_crime</span> <span class="o">=</span> <span class="n">CLT_crime</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;INCIDENT_REPORT_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;OBJECTID&#39;</span><span class="p">,</span><span class="s1">&#39;GlobalID&#39;</span><span class="p">,</span> <span class="s1">&#39;ZIP&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
@@ -14806,7 +14806,7 @@ memory usage: 152.4+ MB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
 <span class="n">CLT_crime</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">CLT_crime</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 
 <span class="c1"># add index field name</span>
@@ -15259,7 +15259,7 @@ memory usage: 152.4+ MB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"></span>
 <span class="c1"># Seven neighborhoods with highest crime</span>
 <span class="n">Neigh_summary_Top</span> <span class="o">=</span> <span class="n">CLT_crime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CMPD_PATROL_DIVISION&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span>
 <span class="n">Neigh_summary_Top</span>
@@ -15625,7 +15625,7 @@ memory usage: 152.4+ MB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"></span>
 <span class="c1"># Seven Neighborhoods with lowest crime</span>
 <span class="n">Neigh_summary_Bot</span> <span class="o">=</span> <span class="n">CLT_crime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CMPD_PATROL_DIVISION&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span>
 <span class="n">Neigh_summary_Bot</span>
@@ -15991,7 +15991,7 @@ memory usage: 152.4+ MB
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># @title</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"></span>
 <span class="c1"># Filter the data for University City  division</span>
 <span class="n">University_data</span> <span class="o">=</span> <span class="n">CLT_crime</span><span class="p">[</span><span class="n">CLT_crime</span><span class="p">[</span><span class="s1">&#39;CMPD_PATROL_DIVISION&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;University City&#39;</span><span class="p">]</span>
 <span class="n">University_crime_counts</span> <span class="o">=</span> <span class="n">University_data</span> <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;YEAR&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
