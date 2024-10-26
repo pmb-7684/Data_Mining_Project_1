@@ -1,10 +1,12 @@
 # Data Mining Project 1 - Exploratory Data Analysis
 ## Charlotte's Neighborhood Crime Over Time
+### Paula McCree-Bailey
 
 
 ### Introduction
 Crime is a concern for many urban areas in the United States, and Charlotte is no exception. It is important to understand crime patterns and statistics to help communities and law enforcement agencies develop plans, allocate resources, and engage with the community to improve public safety. The Charlotte-Mecklenburg Police Department (CMPD) regularly publishes detailed crime reports. As of July 22, 2024, overall crime in Charlotte has seen a slight increase of 1% compared to the previous year. This includes various types of crimes, categorized broadly into violent crimes and property crimes.
 For this project, I plan to explore how crime has evolved over time in different communities and how does the location (such as open field, department store, hotel/motel, etc.) of the incident within neighborhoods effective crime? To answer this question, I will use the `CMPD_PATROL_DIVISION` and the `PLACE_DETAIL-DESCRIPTION` columns to examine these trends over time. By determining communities that are experiencing higher than normal levels of crime and specific location, the city, local law enforcement, and community can help allocated resources, develop plans and support community outreach to support all neighborhoods.
+
 [CMPD's Incidents](https://data.charlottenc.gov/datasets/charlotte::cmpd-incidents-1/about)
 
 ### Dataset
@@ -103,14 +105,15 @@ dict_month = {"Month":{"01":"January", "02":"February", "03":"March", "04":"Apri
 ```
 
 Finally, we have our final CMPD dataset.
-<img src="images/CMPD_data.png" alt="Description" width="300" height="250" />
+
+<img src="images/CMPD_data.png" alt="Description" width="500" height="300" />
 
 ### Visualizations
 
 Our problem is to determine how crime has changed within neighborhoods (or divisions) in Mecklenburg County. Two tables were created using groupby and the CMPD_PATROL_DIVISION column to create a comparison of the number of incidents for the top 5 and bottom 5 neighborhoods. There are 16 divisions within the county.
 
 University City has experienced 78,477 incidents since 2017. If we ignore the unknown, Davidson, Huntersville, and the airport in comparison, South Charlotte has the lowest crime incidents with 38,564.
-<img src="images/crime_UnivCity.png" alt="Description" width="300" height="250" />
+<img src="images/crime_UnivCity.png" alt="Description" width="400" height="275" />
 
 A visualization was created with the annual data from University City. We can see a steady increase since 2017 with a drop off during the pandemic. Since 2020, crime has sharply increased. It will be interesting to see which locations in University are experiencing more crime. But before we look at locations, we will compare University City to other neighborhoods.  By identifing top 7 and bottom 7 neighborhoods based on crime incidents, it will be easier to make a comparison.  
 ```
@@ -118,43 +121,49 @@ A visualization was created with the annual data from University City. We can se
 Neigh_summary_Top = CLT_crime.groupby('CMPD_PATROL_DIVISION').size().reset_index(name='Count').nlargest(7, 'Count')
 Neigh_summary_Top
 ```
-<img src="images/TOP.png" alt="Description" width="300" height="250" />
+<img src="images/TOP.png" alt="Description" width="200" height="200" />
+
 ```
 # Seven Neighborhoods with lowest crime
 Neigh_summary_Bot = CLT_crime.groupby('CMPD_PATROL_DIVISION').size().reset_index(name='Count').nsmallest(7, 'Count')
 Neigh_summary_Bot
 ```
-<img src="images/BOTTOM.png" alt="Description" width="300" height="250" />
+<img src="images/BOTTOM.png" alt="Description" width="200" height="200" />
 
 The chart below displays the top 5 neighborhoods that have been experiencing the most incidents since 2017. We can compare University City area with the other locations. We can visually see similar changes. There was a drop in 2020, likely to the pandemic and guidelines that strongly suggested that citizens stay at home. Beginning in 2021, we see a slow increase likely due to ease of restrictions.
-<img src="images/TOP5.png" alt="Description" width="300" height="250" />
+
+<img src="images/TOP5.png" alt="Description" width="400" height="275" />
 
 This chart allows us to compare the top 5 and bottom 5 neighborhoods. We still see the drop in 2020 with a steady increase beginning in 2021.
 
 All communities had a significant increase from 2022 to 2023 with the exception of the South division. It had an increase, but it was not as sharp. In general, crime has been increasing across the entire city.
-<img src="images/TOPBOTTOM.png" alt="Description" width="300" height="250" />
+<img src="images/TOPBOTTOM.png" alt="Description" width="400" height="275" />
 
 ### Types of Crimes for All Neighborhoods
 
 We have determined all neighborhoods have been experiencing an increase in the number of incidents with the University City area experiencing the largest increase.
 
 Now, let's look at what type of crime is committed most across all neighborhoods . From the table below it is "Theft from Motor Vehicle". Followed closely by "All other offense" and "Other Unlisted Non-Criminal" offenses.
-<img src="images/TOPCRIME.png" alt="Description" width="300" height="250" />
+<img src="images/TOPCRIME.png" alt="Description" width="400" height="275"/>
 
 ### Target Neighborhood University City
 From the data we have observed University City from 2017 to the present has had the highest number of criminal incidents.
 
 Let's just look at 2023 in University City. We want to view the top ten criminal types and to see which month(s) had the highest number of incidents.
-<img src="images/UNIVTOP.png" alt="Description" width="300" height="250" />
+
+<img src="images/UNIVTOP.png" alt="Description" width="400" height="275"/>
+
 The bar chart still shows that Theft from Motor Vehicle is the top incident that occurred last year. Given the amount of news coverage on the TikTok challenge of stealing Kias, I am surprised that auto theft was not higher. It is number with less than 4,000 incidents.
-<img src="images/TOPLOCATION.png" alt="Description" width="300" height="250" />
+
+<img src="images/TOPLOCATION.png" alt="Description" width="400" height="275" />
+
 Above we can see in the University City area, apartment/duplex have significantly more criminal incidents as compared to a private resident.  This could be due to the number of students attending UNC Charlotte and living in off-campus housing.
 
 In 2023, most of the criminal incidents occurred in the months of August and September. The rise in crime during the summer is consistent with crime across the nation. There are various that attribute the "rise in temperatures causes a rise in tempers, kids and college students are out of school, and everyone wants to be outside.
 
-<img src="images/IncidentsMO.png" alt="Description" width="300" height="250" />
+<img src="images/IncidentsMO.png" alt="Description" width="400" height="275" />
 
-Conclusion / Impact
+### Conclusion / Impact
 For our analysis we were able to see that the University City area in Mecklenburg has had the highest overall incidents of crime since 2017. Theft from motor vehicles was the number one type of crime committed in the county including within University City. Although, in other neighborhoods crime was nearly equally likely to be committed in either a private resident or apartment/duplex, in University City a crime was significantly more likely to happen if you lived in an apartment/duplex.
 
 When technology is used in crime prevention, it can be both positive and negative. The positive impact is that law enforcement could meet with city officials to discuss ways to reduce crime by increasing lighting in areas, increased police patrols in certain or talking with community groups who are able to go into the neighborhoods (along with law enforcement) to make a positive impact.
@@ -166,7 +175,7 @@ The data missing could provide more details about types of crime committed. For 
 The data is also missing info about the suspect. I am curious about the age of the suspect, level of education, number of past offenses and whether they lived in the division the crime was committed in. I wonder if crime is just a crime of opportunity, and you know you can get away or if it's planned out from the beginning.
 
 
-References:
+### References:
 https://www.charlottenc.gov/cmpd/News-Information/Crime-Statistics-Report
 https://data.charlottenc.gov/datasets/charlotte::cmpd-incidents-1/about
 https://ui.charlotte.edu/story/how-find-information-your-neighborhood
