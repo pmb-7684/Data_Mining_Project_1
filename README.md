@@ -1,6 +1,6 @@
 # Exploratory Data Analysis - Charlotte's Neighborhood Crime Over Time
 
-#### Paula McCree-Bailey
+#### Paula M-Bailey
 ### Overview
 For this project, each participant will define their own unique problem and select a dataset to delve into.  The primary objective is to write about your process, communicate the rationale behind specific steps taken (such as preprocessing methodologies and their justifications), and weave a compelling narrative that encapsulates your data exploration journey, accompanied by insights gleaned through the visualizations you have created.
 
